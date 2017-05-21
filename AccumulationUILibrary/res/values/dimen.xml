@@ -1,0 +1,6 @@
+<resources>
+
+    <!-- Default Parallax ImageView Height -->
+    <dimen name="parallax_scolllistview_default_head_height">160dp</dimen>
+
+</resources>

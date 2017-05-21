@@ -1,0 +1,11 @@
+<resources>
+    <string name="no_images">no found the image</string>
+    <string name="images">%d images</string>
+    <string name="save">保存</string>
+    <string name="apply">应用</string>
+
+    <string name="stickers">贴图</string>
+    <string name="fliter">滤镜</string>
+    <string name="crop">裁剪</string>
+    <string name="rotate">旋转</string>
+</resources>
