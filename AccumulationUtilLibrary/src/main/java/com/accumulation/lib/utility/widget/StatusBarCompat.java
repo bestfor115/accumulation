@@ -1,4 +1,4 @@
-package com.accumulation.lib.utility.ui;
+package com.accumulation.lib.utility.widget;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

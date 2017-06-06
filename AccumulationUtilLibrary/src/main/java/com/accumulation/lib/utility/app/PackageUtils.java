@@ -1,6 +1,8 @@
 package com.accumulation.lib.utility.app;
 
 import java.io.File;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -10,6 +12,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
@@ -543,6 +546,38 @@ public class PackageUtils {
         context.startActivity(intent);
     }
 
+    public static String getSignMd5Str(Context context, String pkgName) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(pkgName, PackageManager.GET_SIGNATURES);
+            Signature[] signs = packageInfo.signatures;
+            Signature sign = signs[0];
+            String signStr = encryptionMD5(sign.toByteArray());
+            return signStr;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    public static String encryptionMD5(byte[] byteStr) {
+        MessageDigest messageDigest;
+        StringBuffer md5StrBuff = new StringBuffer();
+        try {
+            messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.reset();
+            messageDigest.update(byteStr);
+            byte[] byteArray = messageDigest.digest();
+            for (int i = 0; i < byteArray.length; i++) {
+                if (Integer.toHexString(0xFF & byteArray[i]).length() == 1) {
+                    md5StrBuff.append("0").append(Integer.toHexString(0xFF & byteArray[i]));
+                } else {
+                    md5StrBuff.append(Integer.toHexString(0xFF & byteArray[i]));
+                }
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return md5StrBuff.toString();
+    }
     /**
      * Installation return code<br/>
      * install success.

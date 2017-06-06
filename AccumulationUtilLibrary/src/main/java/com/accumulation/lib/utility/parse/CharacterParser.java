@@ -1,7 +1,6 @@
 
 /*
  * Filename	CharacterParser.java
- * Company	�Ϻ�����-�ֶ��ֹ�˾��
  * @author	LuRuihui
  * @version	0.1
  */

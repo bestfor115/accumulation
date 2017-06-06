@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.telephony.TelephonyManager;
 
 /**
  * 跟网络相关的工具类
@@ -91,4 +92,35 @@ public class NetUtils
         activity.startActivityForResult(intent, 0);
     }
 
+    public static MobileType getNetWorkClass(Context context) {
+        TelephonyManager telephonyManager = (TelephonyManager) context
+                .getSystemService(Context.TELEPHONY_SERVICE);
+
+        switch (telephonyManager.getNetworkType()) {
+            case TelephonyManager.NETWORK_TYPE_GPRS:
+            case TelephonyManager.NETWORK_TYPE_EDGE:
+            case TelephonyManager.NETWORK_TYPE_CDMA:
+            case TelephonyManager.NETWORK_TYPE_1xRTT:
+            case TelephonyManager.NETWORK_TYPE_IDEN:
+                return MobileType.NETWORK_2_G;
+            case TelephonyManager.NETWORK_TYPE_UMTS:
+            case TelephonyManager.NETWORK_TYPE_EVDO_0:
+            case TelephonyManager.NETWORK_TYPE_EVDO_A:
+            case TelephonyManager.NETWORK_TYPE_HSDPA:
+            case TelephonyManager.NETWORK_TYPE_HSUPA:
+            case TelephonyManager.NETWORK_TYPE_HSPA:
+            case TelephonyManager.NETWORK_TYPE_EVDO_B:
+            case TelephonyManager.NETWORK_TYPE_EHRPD:
+            case TelephonyManager.NETWORK_TYPE_HSPAP:
+                return MobileType.NETWORK_3_G;
+            case TelephonyManager.NETWORK_TYPE_LTE:
+                return MobileType.NETWORK_4_G;
+            default:
+                return MobileType.NETWORK_UNKNOWN;
+        }
+    }
+
+    public enum MobileType {
+        NETWORK_UNKNOWN, NETWORK_2_G, NETWORK_3_G, NETWORK_4_G
+    }
 }

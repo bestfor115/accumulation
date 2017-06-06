@@ -13,6 +13,8 @@ import java.io.OutputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.os.Environment;
 import android.text.TextUtils;
 import com.accumulation.lib.utility.matcher.MatcherUtils;
 import com.accumulation.lib.utility.matcher.StringUtils;
@@ -611,5 +613,9 @@ public class FileUtils {
             path += separator;
         }
         return path;
+    }
+
+    public static String getInnerSDCardPath() {
+        return Environment.getExternalStorageDirectory().getPath();
     }
 }
