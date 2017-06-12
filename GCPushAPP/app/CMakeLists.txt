@@ -10,7 +10,6 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-file(GLOB native_srcs "src/main/cpp/*.cpp")
 file(GLOB lua_srcs "src/main/cpp/src/*.c")
 
 add_library( # Sets the name of the library.
@@ -20,7 +19,10 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             ${lua_srcs}  )
+             ${lua_srcs}
+
+             src/main/cpp/script-lib.c
+             )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
