@@ -1,6 +1,7 @@
-function printmsg()
-api_toast("gc://app/weixin")
-end
 function ___MAIN___()
-printmsg()
+    enterTarget()
+end
+
+function enterTarget()
+    api_openAPP("android.settings.SETTINGS")
 end

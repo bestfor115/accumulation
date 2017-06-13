@@ -240,9 +240,12 @@ int api_toast(lua_State* L) {
         jstring js = (*env)->NewStringUTF(env, param);
         (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_toast,
                                      js);
-        //(*env)->ReleaseStringUTFChars(env, js, param);
     }
-    LOGD("toast----");
+    return 0;
+}
+int api_log(lua_State* L) {
+    const char * param = luaL_checkstring(L, 1);
+    LOGE("'%s'\n", param);
     return 0;
 }
 int api_sleep(lua_State* L) {
@@ -432,12 +435,7 @@ int api_sendDownGesture(lua_State* L) {
     }
     return 0;
 }
-int isReg = 0;
 void regFunc() {
-//	if (isReg == 1) {
-//		return;
-//	}
-//	isReg = 1;
     lua_register(L, "api_openAPP", api_openAPP);
     lua_register(L, "api_toast", api_toast);
     lua_register(L, "api_sleep", api_sleep);
@@ -458,6 +456,7 @@ void regFunc() {
     lua_register(L, "api_sendFlingGesture_3", api_sendFlingGesture_3);
     lua_register(L, "api_sendFlingGesture_4", api_sendFlingGesture_4);
     lua_register(L, "api_sendDownGesture", api_sendDownGesture);
+    lua_register(L, "api_log", api_log);
 }
 
 int loadALLAPI(lua_State* L, char * path) {
@@ -472,7 +471,6 @@ int loadALLAPI(lua_State* L, char * path) {
         LOGE("execute script fail!\n");
         return iError;
     }
-
     regFunc();
     lua_getglobal(L, "___MAIN___");
     LOGD("exec main func");

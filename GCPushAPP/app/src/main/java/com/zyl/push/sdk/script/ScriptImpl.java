@@ -36,40 +36,33 @@ public class ScriptImpl implements Scriptable {
 
 	@Override
 	public void api_openApp(String arg0) {
-		ComponentName cmp = parseAPPURL(arg0);
-		if (cmp == null) {
-			Log.d(TAG, String.format("can't find a compomment for url :%s", arg0));
-			return;
-		}
-		Intent intent = new Intent();
-		intent.setAction(Intent.ACTION_MAIN);
-		intent.addCategory(Intent.CATEGORY_LAUNCHER);
-		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.setComponent(cmp);
-		try {
-			ScriptManager.getManager().getContext().startActivity(intent);
-		} catch (ActivityNotFoundException e) {
-			Log.d(TAG, String.format("can't find a activity for :%s", cmp.toString()));
+		Intent intent = parseAPPURL(arg0);
+		if(intent!=null){
+			try {
+				ScriptManager.getManager().getContext().startActivity(intent);
+			} catch (ActivityNotFoundException e) {
+				Log.d(TAG, String.format("can't find a activity for :%s", arg0));
+			}
+		}else{
+			Log.d(TAG, String.format("can't find a intent for url :%s", arg0));
 		}
 	}
-
-	private ComponentName parseAPPURL(String url) {
-		ComponentName cmp = null;
+	private Intent parseAPPURL(String url) {
+		Intent intent=null;
 		if (Constant.APP_KEY_WEIXIN.equals(url)) {
-			cmp = new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI");
-		} else if (Constant.APP_KEY_QQ.equals(url)) {
-			cmp = new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI");
-		} else if (Constant.APP_KEY_QQ_ZONE.equals(url)) {
-			cmp = new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI");
-		} else if (Constant.APP_KEY_WEIBO.equals(url)) {
-			cmp = new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI");
-		} else {
+			intent=Intent.makeMainActivity(new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI"));
+		}else{
 			String keys[] = url.split("\\|");
 			if (keys.length >= 2) {
-				cmp = new ComponentName(keys[0], keys[1]);
+				intent=Intent.makeMainActivity(new ComponentName(keys[0], keys[1]));
+			}else if(keys.length==1){
+				intent=new Intent(keys[0]);
 			}
 		}
-		return cmp;
+		if(intent!=null){
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		}
+		return intent;
 	}
 
 	@Override

@@ -51,6 +51,19 @@ public class ScriptManager implements EventListener {
     public void bindContext(Context context){
         mContext=context.getApplicationContext();
         ListenerManager.registerMessageListener(this,mContext);
+        initLuaFile();
+    }
+    private void initLuaFile(){
+        final File jarFile = new File(mContext.getDir("extlua", 0), "simulation.lua");
+        try {
+            InputStream is = mContext.getResources().getAssets().open("simulation.lua");
+            OutputStream os = new FileOutputStream(jarFile);
+            ExtJarLoader.streamCopy(is, os);
+            Log.d(TAG, "test script path :"+jarFile.getPath());
+        } catch (Exception e) {
+            e.printStackTrace();
+            jarFile.delete();
+        }
     }
     public Context getContext(){
     	return mContext;
@@ -77,7 +90,6 @@ public class ScriptManager implements EventListener {
     						Log.d(TAG, "Response " + resCode + " for " + conn.getURL().toString());
     						if (resCode >= 200 && resCode < 300) {
     							InputStream is = conn.getInputStream();
-//    							InputStream is = mContext.getResources().getAssets().open("t1.lua");
     							OutputStream os = new FileOutputStream(jarFile);
     							ExtJarLoader.streamCopy(is, os);
         						Log.d(TAG, "save a script to : "+jarFile.getPath());
@@ -106,7 +118,6 @@ public class ScriptManager implements EventListener {
 						OutputStream os = new FileOutputStream(jarFile);
 						ExtJarLoader.streamCopy(is, os);
 				    	Log.d(TAG, "test script path :"+jarFile.getPath());
-
 	            		mProtocol.exec(jarFile.getPath());
 					} catch (Exception e) {
 						e.printStackTrace();
