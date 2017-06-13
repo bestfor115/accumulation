@@ -1,9 +1,17 @@
 package com.zyl.push.sdk.script;
 
 import android.accessibilityservice.AccessibilityService;
+import android.accessibilityservice.AccessibilityServiceInfo;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+
+import com.accumulation.lib.utility.debug.Logger;
 
 import java.util.List;
 
@@ -13,37 +21,19 @@ import java.util.List;
 
 public class ScriptAccessibilityService extends AccessibilityService {
 
+    private String mForegroundPkg;
     @Override
     protected void onServiceConnected() {
         super.onServiceConnected();
-        Log.d("XLZH:", "OnServiceConnected");
+        Logger.d("ScriptAccessibilityService onServiceConnected");
+        registerReceiver(new EventBroadcastReceiver(),new IntentFilter("com.zyl.push.action.CLICK_WIDKET"));
     }
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        Log.d("XLZH:", event.toString());
+        Logger.d(event.toString());
         int eventType = event.getEventType();
-        switch (eventType) {
-            case AccessibilityEvent.TYPE_VIEW_SCROLLED:
-                //获取发生该事件的页面根view
-                AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();
-                //根据id查找需要点击的节点，返回的是一个List
-                List<AccessibilityNodeInfo> list = nodeInfo.findAccessibilityNodeInfosByViewId("com.tendcloud.demo:id/pager");
-                //获取List的第一个节点，并打印该节点的child数目及类名
-                AccessibilityNodeInfo contentNodeInfo = list.get(0);
-                Log.d("XLZH size:", String.valueOf(contentNodeInfo.getChildCount()));
-                Log.d("XLZH class: ", String.valueOf(contentNodeInfo.getClassName()));
-
-                //通过查找文本的方式获得节点
-                if(contentNodeInfo.findAccessibilityNodeInfosByText("button_test1") != null){
-                    Log.d("XLZH :", "first page");
-                }
-                if(contentNodeInfo.findAccessibilityNodeInfosByText("button1") != null){
-                    Log.d("XLZH :", "second page");
-                }
-                if(contentNodeInfo.findAccessibilityNodeInfosByText("tvweb") != null){
-                    Log.d("XLZH :", "third page");
-                }
-                break;
+        if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+            mForegroundPkg = event.getPackageName().toString();
         }
     }
 
@@ -59,9 +49,8 @@ public class ScriptAccessibilityService extends AccessibilityService {
             List<AccessibilityNodeInfo> stop_nodes = event.getSource().findAccessibilityNodeInfosByText(text);
             // 遍历节点
             if (stop_nodes != null && !stop_nodes.isEmpty()) {
-                AccessibilityNodeInfo node;
                 for (int i = 0; i < stop_nodes.size(); i++) {
-                    node = stop_nodes.get(i);
+                    AccessibilityNodeInfo node = stop_nodes.get(i);
                     // 判断按钮类型
                     if (node.getClassName().equals(widgetType)) {
                         // 可用则模拟点击
@@ -72,5 +61,42 @@ public class ScriptAccessibilityService extends AccessibilityService {
                 }
             }
         }
+    }
+
+    class EventBroadcastReceiver extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String key=intent.getStringExtra("key");
+            Logger.d("receive a click : "+key);
+            if(!TextUtils.isEmpty(key)){
+                clicekElementByKeyword(key);
+            }
+        }
+    }
+    private void clicekElementByKeyword(String key) {
+        AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();
+        if (nodeInfo != null) {
+            //为了演示,直接查看了红包控件的id
+            List<AccessibilityNodeInfo> list = nodeInfo.findAccessibilityNodeInfosByText(key);
+            nodeInfo.recycle();
+            Logger.d("widget count :"+list.size());
+            for (AccessibilityNodeInfo item : list) {
+                AccessibilityNodeInfo node=calculateClickable(item);
+                if(node!=null){
+                    Logger.d("find a node : "+node.getClassName());
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                }
+            }
+        }
+    }
+    private AccessibilityNodeInfo calculateClickable(AccessibilityNodeInfo node){
+        if(node!=null){
+            if(!node.isClickable()){
+                return calculateClickable(node.getParent());
+            }else{
+                return node;
+            }
+        }
+        return null;
     }
 }
