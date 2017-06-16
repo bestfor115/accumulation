@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AccumulationUtilLibrary/AccumulationUtilLibrary.iml" filepath="$PROJECT_DIR$/AccumulationUtilLibrary/AccumulationUtilLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/GCPushAPP.iml" filepath="$PROJECT_DIR$/GCPushAPP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCVSDK/OpenCVSDK.iml" filepath="$PROJECT_DIR$/OpenCVSDK/OpenCVSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -1,13 +1,12 @@
 package com.zyl.push.sdk.script;
 
 import android.accessibilityservice.AccessibilityService;
-import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
@@ -21,18 +20,26 @@ import java.util.List;
 
 public class ScriptAccessibilityService extends AccessibilityService {
 
+    public static final String TAP_WIDGET_ACTION="com.zyl.push.action.CLICK_WIDKET";
+    public static final String SET_INPUT_METHOD_ACTION="com.zyl.push.action.SET_INPUT_METHOD";
+    public static final String TAP_COLOR_ACTION="com.zyl.push.action.CLICK_COLOR";
+
     private String mForegroundPkg;
     @Override
     protected void onServiceConnected() {
         super.onServiceConnected();
         Logger.d("ScriptAccessibilityService onServiceConnected");
-        registerReceiver(new EventBroadcastReceiver(),new IntentFilter("com.zyl.push.action.CLICK_WIDKET"));
+        IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction(TAP_WIDGET_ACTION);
+        intentFilter.addAction(SET_INPUT_METHOD_ACTION);
+        intentFilter.addAction(TAP_COLOR_ACTION);
+        registerReceiver(new EventBroadcastReceiver(),intentFilter);
     }
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
         Logger.d(event.toString());
         int eventType = event.getEventType();
-        if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+        if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             mForegroundPkg = event.getPackageName().toString();
         }
     }
@@ -42,36 +49,53 @@ public class ScriptAccessibilityService extends AccessibilityService {
 
     }
 
-    private void click(AccessibilityEvent event, String text, String widgetType) {
-        // 事件页面节点信息不为空
-        if (event.getSource() != null) {
-            // 根据Text搜索所有符合条件的节点, 模糊搜索方式; 还可以通过ID来精确搜索findAccessibilityNodeInfosByViewId
-            List<AccessibilityNodeInfo> stop_nodes = event.getSource().findAccessibilityNodeInfosByText(text);
-            // 遍历节点
-            if (stop_nodes != null && !stop_nodes.isEmpty()) {
-                for (int i = 0; i < stop_nodes.size(); i++) {
-                    AccessibilityNodeInfo node = stop_nodes.get(i);
-                    // 判断按钮类型
-                    if (node.getClassName().equals(widgetType)) {
-                        // 可用则模拟点击
-                        if (node.isEnabled()) {
-                            node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     class EventBroadcastReceiver extends BroadcastReceiver{
         @Override
         public void onReceive(Context context, Intent intent) {
-            String key=intent.getStringExtra("key");
-            Logger.d("receive a click : "+key);
-            if(!TextUtils.isEmpty(key)){
-                clicekElementByKeyword(key);
+            if(TAP_WIDGET_ACTION.equals(intent.getAction())){
+                String key=intent.getStringExtra("key");
+                Logger.d("receive a click : "+key);
+                if(!TextUtils.isEmpty(key)){
+                    clicekElementByKeyword(key);
+                }
+            }else if(SET_INPUT_METHOD_ACTION.equals(intent.getAction())){
+                int state=intent.getIntExtra("state",0);
+                triggerInputMethod(state);
+            }else if(TAP_COLOR_ACTION.equals(intent.getAction())){
+                String color=intent.getStringExtra("color");
+                calculateColorRange(Color.parseColor("color"));
             }
         }
+    }
+    private void calculateColorRange(int color){
+
+    }
+    private void triggerInputMethod(int state) {
+        AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();
+        if(nodeInfo!=null){
+            if(state==0){
+                AccessibilityNodeInfo inputInfo=findFocusableNode(nodeInfo);
+                if(inputInfo!=null){
+                    inputInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                }
+            }else{
+                nodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLEAR_FOCUS);
+            }
+        }
+    }
+    private AccessibilityNodeInfo findFocusableNode(AccessibilityNodeInfo node){
+        if(node.isEditable()){
+            return node;
+        }else{
+            int N=node.getChildCount();
+            for (int i=0;i<N;i++){
+                AccessibilityNodeInfo sub=findFocusableNode(node.getChild(i));
+                if(sub!=null){
+                    return sub;
+                }
+            }
+        }
+        return null;
     }
     private void clicekElementByKeyword(String key) {
         AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();

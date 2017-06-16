@@ -1,1 +1,1 @@
-include ':app', ':AccumulationUtilLibrary'
+include ':app', ':AccumulationUtilLibrary', ':OpenCVSDK'

@@ -1,5 +1,6 @@
 package com.zyl.push.sdk.script;
 
+import android.content.Intent;
 import android.util.Log;
 
 public class MScriptProtocol /*implements Scriptable*/{
@@ -83,4 +84,14 @@ public class MScriptProtocol /*implements Scriptable*/{
 	private static final void api_sendDownGesture(int x, int y) {
 		mScriptImpl.api_sendDownGesture(x,y);
 	}
+	private static void api_tapById(String id) {
+		mScriptImpl.api_tapById(id);
+	}
+	private static void api_tapByText(String text) {
+		mScriptImpl.api_tapByText(text);
+	}
+	private static void api_setInputMethodState(int state){
+		mScriptImpl.api_setInputMethodState(state);
+	}
+
 }

@@ -73,6 +73,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.ImageManipulationsActivity"/>
         <!-- 推送服务 -->
         <service
             android:name="com.zyl.push.sdk.PushService"
@@ -112,6 +113,11 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility" />
         </service>
+        <receiver android:name=".TestRevicer">
+            <intent-filter>
+                <action android:name="com.zyl.push.action.TEST" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

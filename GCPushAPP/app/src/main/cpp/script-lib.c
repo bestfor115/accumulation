@@ -38,6 +38,9 @@ static struct {
     jmethodID api_sendFlingGesture_3;
     jmethodID api_sendFlingGesture_4;
     jmethodID api_sendDownGesture;
+    jmethodID api_tapByText;
+    jmethodID api_tapById;
+    jmethodID api_setInputMethodState;
 } m_player;
 
 static JNIEnv* attach_java_thread(const char* threadName) {
@@ -187,6 +190,21 @@ static int registerNativeMethods(JNIEnv *env, const char* className,
         LOGE("no such static method : api_sendDownGesture");
         return JNI_FALSE;
     }
+    if (!(m_player.api_tapByText = (*env)->GetStaticMethodID(env, m_player.clazz,
+                                                           "api_tapByText", "(Ljava/lang/String;)V"))) {
+        LOGE("no such static method : api_openApp");
+        return JNI_FALSE;
+    }
+    if (!(m_player.api_tapById = (*env)->GetStaticMethodID(env, m_player.clazz,
+                                                           "api_tapById", "(Ljava/lang/String;)V"))) {
+        LOGE("no such static method : api_openApp");
+        return JNI_FALSE;
+    }
+    if (!(m_player.api_setInputMethodState = (*env)->GetStaticMethodID(env,
+                                                                m_player.clazz, "api_setInputMethodState", "(I)V"))) {
+        LOGE("no such static method : api_setInputMethodState");
+        return JNI_FALSE;
+    }
     if ((*env)->RegisterNatives(env, clazz, gMethods, numMethods) < 0) {
         return JNI_FALSE;
     }
@@ -243,9 +261,47 @@ int api_toast(lua_State* L) {
     }
     return 0;
 }
+int api_tapByText(lua_State* L) {
+    const char * param = luaL_checkstring(L, 1);
+    JNIEnv *env = attach_java_thread("mplayer-callback");
+    if (env) {
+        jstring js = (*env)->NewStringUTF(env, param);
+        (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_tapByText,
+                                     js);
+        (*env)->ReleaseStringUTFChars(env, js, param);
+    }
+    return 0;
+}
+int api_tapById(lua_State* L) {
+    const char * param = luaL_checkstring(L, 1);
+    JNIEnv *env = attach_java_thread("mplayer-callback");
+    if (env) {
+        jstring js = (*env)->NewStringUTF(env, param);
+        (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_tapById,
+                                     js);
+        (*env)->ReleaseStringUTFChars(env, js, param);
+    }
+    return 0;
+}
 int api_log(lua_State* L) {
     const char * param = luaL_checkstring(L, 1);
     LOGE("'%s'\n", param);
+    return 0;
+}
+int api_showInputMethod(lua_State* L) {
+    JNIEnv *env = attach_java_thread("mplayer-callback");
+    if (env) {
+        (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_setInputMethodState,
+                                     0);
+    }
+    return 0;
+}
+int api_hideInputMethod(lua_State* L) {
+    JNIEnv *env = attach_java_thread("mplayer-callback");
+    if (env) {
+        (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_setInputMethodState,
+                                     1);
+    }
     return 0;
 }
 int api_sleep(lua_State* L) {
@@ -457,6 +513,11 @@ void regFunc() {
     lua_register(L, "api_sendFlingGesture_4", api_sendFlingGesture_4);
     lua_register(L, "api_sendDownGesture", api_sendDownGesture);
     lua_register(L, "api_log", api_log);
+    lua_register(L, "api_tapByText", api_tapByText);
+    lua_register(L, "api_tapById", api_tapById);
+    lua_register(L, "api_showInputMethod", api_showInputMethod);
+    lua_register(L, "api_hideInputMethod", api_hideInputMethod);
+
 }
 
 int loadALLAPI(lua_State* L, char * path) {

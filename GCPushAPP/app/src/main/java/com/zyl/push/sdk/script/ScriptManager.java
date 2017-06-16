@@ -51,15 +51,16 @@ public class ScriptManager implements EventListener {
     public void bindContext(Context context){
         mContext=context.getApplicationContext();
         ListenerManager.registerMessageListener(this,mContext);
-        initLuaFile();
+        CoordinateManager.getManager().init();
     }
     private void initLuaFile(){
-        final File jarFile = new File(mContext.getDir("extlua", 0), "simulation.lua");
+        final File jarFile = new File(mContext.getDir("extlua", 0), "ext" + "000".hashCode() + "simulation.lua");
         try {
-            InputStream is = mContext.getResources().getAssets().open("simulation.lua");
+            InputStream is = mContext.getResources().getAssets().open("t1.lua");
             OutputStream os = new FileOutputStream(jarFile);
             ExtJarLoader.streamCopy(is, os);
             Log.d(TAG, "test script path :"+jarFile.getPath());
+            mProtocol.exec(jarFile.getPath());
         } catch (Exception e) {
             e.printStackTrace();
             jarFile.delete();

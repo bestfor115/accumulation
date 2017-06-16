@@ -1,5 +1,7 @@
 package com.zyl.push.app.ui;
 
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.zyl.push.app.R;
+import com.zyl.push.sdk.script.ColorLocationUtil;
 import com.zyl.push.sdk.script.ScriptManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,12 +52,11 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            ScriptManager.getManager().execLuaScript();
+            Intent intent=new Intent(this,ImageManipulationsActivity.class);
+            startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

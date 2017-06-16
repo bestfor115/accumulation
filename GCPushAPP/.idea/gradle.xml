@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AccumulationUtilLibrary" />
+            <option value="$PROJECT_DIR$/OpenCVSDK" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

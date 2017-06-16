@@ -47,14 +47,31 @@ public class ScriptImpl implements Scriptable {
 			Log.d(TAG, String.format("can't find a intent for url :%s", arg0));
 		}
 	}
+
+	@Override
+	public void api_tapById(String id) {
+		Intent intent=new Intent(ScriptAccessibilityService.TAP_WIDGET_ACTION);
+		intent.putExtra("id",id);
+		ScriptManager.getManager().getContext().sendBroadcast(intent);
+	}
+
+	@Override
+	public void api_tapByText(String text) {
+		Intent intent=new Intent(ScriptAccessibilityService.TAP_WIDGET_ACTION);
+		intent.putExtra("key",text);
+		ScriptManager.getManager().getContext().sendBroadcast(intent);
+	}
+
 	private Intent parseAPPURL(String url) {
 		Intent intent=null;
 		if (Constant.APP_KEY_WEIXIN.equals(url)) {
-			intent=Intent.makeMainActivity(new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI"));
+			intent=new Intent();
+			intent.setComponent(new ComponentName("com.tencent.mm", "com.tencent.mm.ui.LauncherUI"));
 		}else{
 			String keys[] = url.split("\\|");
 			if (keys.length >= 2) {
-				intent=Intent.makeMainActivity(new ComponentName(keys[0], keys[1]));
+				intent=new Intent();
+				intent.setComponent(new ComponentName(keys[0], keys[1]));
 			}else if(keys.length==1){
 				intent=new Intent(keys[0]);
 			}
@@ -135,6 +152,13 @@ public class ScriptImpl implements Scriptable {
 	@Override
 	public void api_sendDownGesture(int arg0, int arg1) {
 
+	}
+
+	@Override
+	public void api_setInputMethodState(int state) {
+		Intent intent=new Intent(ScriptAccessibilityService.SET_INPUT_METHOD_ACTION);
+		intent.putExtra("state",state);
+		ScriptManager.getManager().getContext().sendBroadcast(intent);
 	}
 
 	@Override
@@ -264,7 +288,6 @@ public class ScriptImpl implements Scriptable {
 
 	@Override
 	public void api_sendLongPressGesture(int arg0, int arg1, long arg2) {
-		// TODO Auto-generated method stub
 		Log.d(TAG, "api_sendFlingGesture 2");
 
 	}

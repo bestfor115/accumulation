@@ -1,12 +1,14 @@
 package com.zyl.push.sdk.script;
 
+import android.view.KeyEvent;
+
 public interface Constant {
     public static final int API_VERSION_BASE=0;
     public static final int ANDROID_PLATFORM=0;
     public static final int IOS_PLATFORM=1;
-    public static final int KEYCODE_BACK = 0;
-    public static final int KEYCODE_HOME = 0;
-    public static final int KEYCODE_MENU = 0;
+    public static final int KEYCODE_BACK = KeyEvent.KEYCODE_BACK;
+    public static final int KEYCODE_HOME = KeyEvent.KEYCODE_HOME;
+    public static final int KEYCODE_MENU = KeyEvent.KEYCODE_MENU;
     public static final int KEYCODE_SEARCH = 0;
     public static final String APP_KEY_WEIXIN = "gc://app/weixin";
     public static final String APP_KEY_QQ = "gc://app/qq";
