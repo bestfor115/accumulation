@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">GCPushAPP</string>
-    <string name="action_settings">Settings</string>
-    <string name="description">this is just help to script</string>
-    <string name="accessibility_service_name">群控脚本辅助</string>
-</resources>

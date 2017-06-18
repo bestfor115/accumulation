@@ -1,6 +1,0 @@
-<resources>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="topbar_btn_width">50dp</dimen>
-    <dimen name="base_action_bar_height">48.0dip</dimen>
-
-</resources>
