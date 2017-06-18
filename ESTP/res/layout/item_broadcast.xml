@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/auxiliaryHueTwo"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/tag_part"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/tag_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/tag_line"
+        layout="@layout/include_vertical_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal" >
+
+            <com.accumulation.lib.ui.image.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/default_head" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/blue_name_color"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:id="@+id/delete_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="删除"
+                            android:textColor="#800000"
+                            android:textSize="14sp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/broadcast_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="5dp"
+                        android:src="@drawable/group_down"
+                        android:visibility="visible" />
+
+                    <ProgressBar
+                        android:id="@+id/commiting"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="20dp"
+                        android:indeterminateBehavior="repeat"
+                        android:indeterminateDrawable="@drawable/data_loading_drawable"
+                        android:indeterminateOnly="true"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/publish_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#555"
+                    android:textSize="11sp" >
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <com.accumulation.app.view.RichTextView
+                android:id="@+id/broadcast_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:lineSpacingMultiplier="1.25"
+                android:singleLine="false"
+                android:textColor="?attr/fontPrimary"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/image_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp" />
+
+            <LinearLayout
+                android:id="@+id/zip_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp" />
+
+            <LinearLayout
+                android:id="@+id/related_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:backgroundTintMode="screen"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <com.accumulation.app.view.RichTextView
+                    android:id="@+id/related_broadcast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.25"
+                    android:textColor="@color/secondary_txt_color"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/related_image_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/include_vertical_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp" >
+
+        <LinearLayout
+            android:id="@+id/retweet_broadcast"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/itemSelector"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/retweet_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_retweet"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="转发"
+                android:textColor="@color/description_txt_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comment_broadcast"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/itemSelector"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_comment"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="评论"
+                android:textColor="@color/description_txt_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/like_broadcast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/itemSelector"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/like_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_like" />
+
+                <TextView
+                    android:id="@+id/like_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"
+                    android:text="赞"
+                    android:textColor="@color/description_txt_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/like_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp"
+                android:alpha="0"
+                android:text="+1"
+                android:textColor="#ff0000"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

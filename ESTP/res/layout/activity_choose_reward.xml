@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?dominantHue"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_toolbar_txt_menu" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:singleLine="true"
+        android:text="请选择悬赏金额"
+        android:textColor="?attr/fontDescription"
+        android:textSize="?attr/mediumFontSize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/reward_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="5"
+            android:text="5"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+
+        <Button
+            android:id="@+id/reward_10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="10"
+            android:text="10"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+
+        <Button
+            android:id="@+id/reward_20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="20"
+            android:text="20"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+
+        <Button
+            android:id="@+id/reward_30"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="30"
+            android:text="30"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/reward_50"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="50"
+            android:text="50"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+
+        <Button
+            android:id="@+id/reward_100"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="100"
+            android:text="100"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+
+        <Button
+            android:id="@+id/reward_200"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:gravity="center"
+            android:tag="200"
+            android:text="200"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="?attr/largeFontSize" />
+
+        <RelativeLayout
+            android:id="@+id/reward_other"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/reward_background_selector"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/other_tip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="其他"
+                android:textColor="?attr/fontPrimary"
+                android:textSize="?attr/largeFontSize" />
+
+            <EditText
+                android:id="@+id/other_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="?attr/fontPrimary"
+                android:textSize="?attr/largeFontSize"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/solid_button_selector"
+        android:text="确认选择"
+        android:textColor="?attr/dominantHue"
+        android:textSize="?attr/largeFontSize" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/choose_reward_tip"
+        android:textColor="?attr/fontDescription"
+        android:textSize="?attr/mediumFontSize" />
+
+</LinearLayout>

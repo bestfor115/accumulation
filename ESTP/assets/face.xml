@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<div width="15" height="7">
+	<a i="15" title="微笑">
+	</a>
+
+	<a i="16" title="撇嘴">
+	</a>
+
+	<a i="17" title="色">
+	</a>
+
+	<a i="18" title="发呆">
+	</a>
+
+	<a i="19" title="得意">
+	</a>
+
+	<a i="20" title="流泪">
+	</a>
+
+	<a i="21" title="害羞">
+	</a>
+
+	<a i="22" title="闭嘴">
+	</a>
+
+	<a i="23" title="睡">
+	</a>
+
+	<a i="24" title="大哭">
+	</a>
+
+	<a i="25" title="尴尬">
+	</a>
+
+	<a i="26" title="发怒">
+	</a>
+
+	<a i="27" title="调皮">
+	</a>
+
+	<a i="28" title="呲牙">
+	</a>
+
+	<a i="29" title="惊讶">
+	</a>
+
+	<a i="30" title="难过">
+	</a>
+
+	<a i="31" title="酷">
+	</a>
+
+	<a i="32" title="冷汗">
+	</a>
+
+	<a i="33" title="抓狂">
+	</a>
+
+	<a i="34" title="吐">
+	</a>
+
+	<a i="35" title="偷笑">
+	</a>
+
+	<a i="36" title="可爱">
+	</a>
+
+	<a i="37" title="白眼">
+	</a>
+
+	<a i="38" title="傲慢">
+	</a>
+
+	<a i="39" title="饥饿">
+	</a>
+
+	<a i="40" title="困">
+	</a>
+
+	<a i="41" title="惊恐">
+	</a>
+
+	<a i="42" title="流汗">
+	</a>
+
+	<a i="43" title="憨笑">
+	</a>
+
+	<a i="44" title="大兵">
+	</a>
+
+	<a i="45" title="奋斗">
+	</a>
+
+	<a i="46" title="咒骂">
+	</a>
+
+	<a i="47" title="疑问">
+	</a>
+
+	<a i="48" title="嘘">
+	</a>
+
+	<a i="49" title="晕">
+	</a>
+
+	<a i="50" title="折磨">
+	</a>
+
+	<a i="51" title="衰">
+	</a>
+
+	<a i="52" title="骷髅">
+	</a>
+
+	<a i="53" title="敲打">
+	</a>
+
+	<a i="54" title="再见">
+	</a>
+
+	<a i="55" title="擦汗">
+	</a>
+
+	<a i="56" title="抠鼻">
+	</a>
+
+	<a i="57" title="鼓掌">
+	</a>
+
+	<a i="58" title="糗大了">
+	</a>
+
+	<a i="59" title="坏笑">
+	</a>
+
+	<a i="60" title="左哼哼">
+	</a>
+
+	<a i="61" title="右哼哼">
+	</a>
+
+	<a i="62" title="哈欠">
+	</a>
+
+	<a i="63" title="鄙视">
+	</a>
+
+	<a i="64" title="委屈">
+	</a>
+
+	<a i="65" title="快哭了">
+	</a>
+
+	<a i="66" title="阴险">
+	</a>
+
+	<a i="67" title="亲亲">
+	</a>
+
+	<a i="68" title="吓">
+	</a>
+
+	<a i="69" title="可怜">
+	</a>
+
+	<a i="70" title="菜刀">
+	</a>
+
+	<a i="71" title="西瓜">
+	</a>
+
+	<a i="72" title="啤酒">
+	</a>
+
+	<a i="73" title="篮球">
+	</a>
+
+	<a i="74" title="乒乓">
+	</a>
+
+	<a i="75" title="咖啡">
+	</a>
+
+	<a i="76" title="饭">
+	</a>
+
+	<a i="77" title="猪头">
+	</a>
+
+	<a i="78" title="玫瑰">
+	</a>
+
+	<a i="79" title="凋谢">
+	</a>
+
+	<a i="80" title="示爱">
+	</a>
+
+	<a i="81" title="爱心">
+	</a>
+
+	<a i="82" title="心碎">
+	</a>
+
+	<a i="83" title="蛋糕">
+	</a>
+
+	<a i="84" title="闪电">
+	</a>
+
+	<a i="85" title="炸弹">
+	</a>
+
+	<a i="86" title="刀">
+	</a>
+
+	<a i="87" title="足球">
+	</a>
+
+	<a i="88" title="瓢虫">
+	</a>
+
+	<a i="89" title="便便">
+	</a>
+
+	<a i="90" title="月亮">
+	</a>
+
+	<a i="91" title="太阳">
+	</a>
+
+	<a i="92" title="礼物">
+	</a>
+
+	<a i="93" title="拥抱">
+	</a>
+
+	<a i="94" title="强">
+	</a>
+
+	<a i="95" title="弱">
+	</a>
+
+	<a i="96" title="握手">
+	</a>
+
+	<a i="97" title="胜利">
+	</a>
+
+	<a i="98" title="抱拳">
+	</a>
+
+	<a i="99" title="勾引">
+	</a>
+
+	<a i="100" title="拳头">
+	</a>
+
+	<a i="101" title="差劲">
+	</a>
+
+	<a i="102" title="爱你">
+	</a>
+
+	<a i="103" title="NO">
+	</a>
+
+	<a i="104" title="OK">
+	</a>
+
+	<a i="105" title="爱情">
+	</a>
+
+	<a i="106" title="飞吻">
+	</a>
+
+	<a i="107" title="跳跳">
+	</a>
+
+	<a i="108" title="发抖">
+	</a>
+
+	<a i="109" title="怄火">
+	</a>
+
+	<a i="110" title="转圈">
+	</a>
+
+	<a i="111" title="磕头">
+	</a>
+
+	<a i="112" title="回头">
+	</a>
+
+	<a i="113" title="跳绳">
+	</a>
+
+	<a i="114" title="挥手">
+	</a>
+
+	<a i="115" title="激动">
+	</a>
+
+	<a i="116" title="街舞">
+	</a>
+
+	<a i="117" title="献吻">
+	</a>
+
+	<a i="118" title="左太极">
+	</a>
+
+	<a i="119" title="右太极">
+	</a>
+
+</div>

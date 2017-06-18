@@ -1,0 +1,145 @@
+<com.accumulation.lib.ui.header.TouchCallbackLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="@dimen/viewpager_margin_top" />
+
+    <LinearLayout
+        android:id="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/qq_com_bg_pic" />
+
+            <com.accumulation.lib.ui.image.CircleImageView
+                android:id="@+id/user_header"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="70dp"
+                android:src="@drawable/default_head" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:text="关注"
+                android:textColor="#fff"
+                android:textSize="?attr/largeFontSize" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/auxiliaryHueThree"
+            android:gravity="center_horizontal" >
+
+            <com.accumulation.app.view.SlidingTabLayout
+                android:id="@id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/tabs_height"
+                android:layout_gravity="center_horizontal"
+                android:background="?attr/auxiliaryHueThree" />
+        </LinearLayout>
+
+        <include layout="@layout/include_vertical_divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topbar_container"
+        style="@style/ActionBar"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbar_gradient"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/topbar"
+            style="@style/ActionBar"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:id="@+id/back"
+                android:layout_width="@dimen/topbar_btn_width"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_selector"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_show_pic_back_icon" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/base_action_bar_height"
+                android:alpha="0"
+                android:gravity="center"
+                android:paddingRight="@dimen/topbar_btn_width"
+                android:text=""
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:divider="?attr/horizontalDivider"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/chat_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/itemSelector"
+            android:gravity="center"
+            android:text="私信"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/follow_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/itemSelector"
+            android:gravity="center"
+            android:text="关注"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</com.accumulation.lib.ui.header.TouchCallbackLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 色调方案 -->
+    <declare-styleable name="HueSchemes">
+
+        <!-- 主色调 -->
+        <attr name="dominantHue" format="reference|color" />
+        <!-- 辅助色调 -->
+        <attr name="auxiliaryHue" format="reference|color" />
+        <!-- 辅助色调 -->
+        <attr name="auxiliaryHueTwo" format="reference|color" />
+        <!-- 辅助色调 -->
+        <attr name="auxiliaryHueThree" format="reference|color" />
+        <!-- 对比色调 -->
+        <attr name="contrastingHue" format="reference|color" />
+    </declare-styleable>
+
+    <!-- 字体配色方案 -->
+    <declare-styleable name="FontColorSchemes">
+
+        <!-- 字体主色调 -->
+        <attr name="fontPrimary" format="reference|color" />
+        <!-- 字体次色调 -->
+        <attr name="fontSecondary" format="reference|color" />
+        <!-- 字体说明色调 -->
+        <attr name="fontDescription" format="reference|color" />
+        <!-- 字体强调色调 -->
+        <attr name="fontAccent" format="reference|color" />
+    </declare-styleable>
+
+    <!-- 菜单图片方案 -->
+    <declare-styleable name="MenuIconSchemes">
+
+        <!-- 字体主色调 -->
+        <attr name="iconBack" format="reference" />
+        <!-- 字体次色调 -->
+        <attr name="iconMore" format="reference" />
+        <!-- 字体说明色调 -->
+        <attr name="iconFilter" format="reference" />
+        <!-- 字体强调色调 -->
+        <attr name="iconCancel" format="reference" />
+        <!-- 字体强调色调 -->
+        <attr name="iconCommit" format="reference" />
+    </declare-styleable>
+
+    <attr name="verticalDivider" format="reference" />
+    <attr name="horizontalDivider" format="reference" />
+    <attr name="tinyFontSize" format="dimension" />
+    <attr name="smallFontSize" format="dimension" />
+    <attr name="mediumFontSize" format="dimension" />
+    <attr name="largeFontSize" format="dimension" />
+    <attr name="superFontSize" format="dimension" />
+    <attr name="itemSelector" format="dimension" />
+
+</resources>

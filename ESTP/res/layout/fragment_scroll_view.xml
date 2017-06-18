@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/row_part_margin"
+            android:divider="?attr/verticalDivider"
+            android:orientation="vertical"
+            android:showDividers="middle|end" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_normal_height"
+                android:background="?attr/itemSelector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/row_left_padding"
+                android:paddingRight="@dimen/row_right_padding" >
+
+                <TextView
+                    android:layout_width="@dimen/row_left_width"
+                    android:layout_height="wrap_content"
+                    android:text="基本信息"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="@dimen/row_txt_size" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="@dimen/row_txt_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_normal_height"
+                android:background="?attr/itemSelector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/row_left_padding"
+                android:paddingRight="@dimen/row_right_padding" >
+
+                <TextView
+                    android:layout_width="@dimen/row_left_width"
+                    android:layout_height="wrap_content"
+                    android:text="账号"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="@dimen/row_txt_size" />
+
+                <TextView
+                    android:id="@+id/user_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="@dimen/row_txt_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_normal_height"
+                android:background="?attr/itemSelector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/row_left_padding"
+                android:paddingRight="@dimen/row_right_padding" >
+
+                <TextView
+                    android:layout_width="@dimen/row_left_width"
+                    android:layout_height="wrap_content"
+                    android:text="签名"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="@dimen/row_txt_size" />
+
+                <TextView
+                    android:id="@+id/user_signature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="@dimen/row_txt_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/row_part_margin"
+            android:divider="?attr/verticalDivider"
+            android:orientation="vertical"
+            android:showDividers="middle|end" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_normal_height"
+                android:background="?attr/itemSelector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/row_left_padding"
+                android:paddingRight="@dimen/row_right_padding" >
+
+                <TextView
+                    android:layout_width="@dimen/row_left_width"
+                    android:layout_height="wrap_content"
+                    android:text="赞"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="@dimen/row_txt_size" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="@dimen/row_txt_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/row_part_margin"
+            android:divider="?attr/verticalDivider"
+            android:orientation="vertical"
+            android:showDividers="middle|end" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_normal_height"
+                android:background="?attr/itemSelector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/row_left_padding"
+                android:paddingRight="@dimen/row_right_padding" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="了解更多"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="@dimen/row_txt_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

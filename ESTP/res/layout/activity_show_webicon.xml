@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#191919"
+    android:orientation="vertical" >
+
+    <com.accumulation.app.view.CustomViewPager
+        android:id="@+id/pagerview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/ActionBar"
+        android:background="#60000000" >
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="@dimen/topbar_btn_width"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_selector"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_show_pic_back_icon" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/ActionBarTitle"
+            android:ellipsize="end"
+            android:maxWidth="200dp"
+            android:singleLine="true" />
+
+        <RelativeLayout
+            android:id="@+id/menu"
+            android:layout_width="@dimen/topbar_btn_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_selector"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_show_pic_save"
+                android:tag="image" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#333" />
+    </RelativeLayout>
+
+</RelativeLayout>

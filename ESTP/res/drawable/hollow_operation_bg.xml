@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<selector xmlns:android="http://schemas.android.com/apk/res/android">  
+    <!--点击背景-->  
+    <item android:state_pressed="true">  
+        <shape>  
+             <!--色值-->  
+            <stroke android:color="@color/black" android:width="0.1dp"/> 
+            <!--圆角-->  
+            <corners android:radius="2dp" />  
+        </shape>  
+    </item>  
+    <!--默认背景-->  
+    <item>  
+        <shape>  
+            <stroke android:color="@color/transparent_black"  android:width="0.1dp"/> 
+            <corners android:radius="2dp" />  
+        </shape>  
+    </item>  
+</selector>  

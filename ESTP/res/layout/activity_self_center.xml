@@ -1,0 +1,263 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_toolbar_txt_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/colume_item_space"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/user_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="?attr/itemSelector" >
+
+                    <com.accumulation.lib.ui.image.CircleImageView
+                        android:id="@+id/user_avatar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/default_head" />
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="15dp"
+                        android:text=""
+                        android:textColor="@color/blue_name_color"
+                        android:textSize="17sp" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/user_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="40dp"
+                        android:text=""
+                        android:textColor="?attr/fontSecondary"
+                        android:textSize="15sp" >
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/user_more_info" />
+                </RelativeLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/my_broadcast"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/itemSelector"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/broadcast_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="?attr/fontPrimary"
+                            android:textSize="16sp" >
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-5dp"
+                            android:gravity="center_horizontal"
+                            android:text="动态"
+                            android:textColor="?attr/fontDescription"
+                            android:textSize="15sp" >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/my_favorite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/itemSelector"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/favorite_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="?attr/fontPrimary"
+                            android:textSize="16sp" >
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-5dp"
+                            android:gravity="center_horizontal"
+                            android:text="收藏"
+                            android:textColor="?attr/fontDescription"
+                            android:textSize="15sp" >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/my_fans"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/itemSelector"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/attention_coount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="?attr/fontPrimary"
+                            android:textSize="16sp" >
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-5dp"
+                            android:gravity="center_horizontal"
+                            android:text="关注"
+                            android:textColor="?attr/fontDescription"
+                            android:textSize="15sp" >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/my_follow"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/itemSelector"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/follow_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="?attr/fontPrimary"
+                            android:textSize="16sp" >
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-5dp"
+                            android:gravity="center_horizontal"
+                            android:text="听众"
+                            android:textColor="?attr/fontDescription"
+                            android:textSize="15sp" >
+                        </TextView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/colume_item_space"
+                android:orientation="vertical" >
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="我的财富" />
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout style="@style/ColumeItem"  android:id="@+id/my_qrcode">
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="我的二维码" />
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="编辑资料" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/colume_item_space"
+                android:orientation="vertical" >
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="我的群组" />
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="我的对话" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

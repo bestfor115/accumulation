@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/broadcast_list_divider_height" >
+
+    <TextView
+        android:id="@+id/broadcast_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="15dp"
+        android:text="全部(0)"
+        android:textColor="?attr/fontDescription"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/filter_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_screening"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="筛选"
+        android:textColor="#507daf"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_black"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:divider="?attr/verticalDivider"
+        android:orientation="vertical"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/flag_comment"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="标记答案"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/reply_comment"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="回 复"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/copy_comment"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="复 制"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/delete_comment"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="删 除"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

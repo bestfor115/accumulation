@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_toolbar_icon_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/row_part_margin"
+        android:divider="?attr/verticalDivider"
+        android:orientation="vertical"
+        android:showDividers="middle|end|beginning" >
+
+        <LinearLayout
+            android:id="@+id/user_home"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/row_left_padding"
+            android:paddingRight="@dimen/row_right_padding" >
+
+            <com.accumulation.lib.ui.image.CircleImageView
+                android:id="@+id/user_header"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/default_head" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="@dimen/row_txt_size" />
+
+                <TextView
+                    android:id="@+id/user_dsn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="@dimen/row_txt_size" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/user_more_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/create_discuss"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/colume_height"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/row_left_padding"
+            android:paddingRight="@dimen/row_right_padding" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/icon_add_something" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="创建讨论组"
+                    android:textColor="?attr/fontPrimary"
+                android:textSize="@dimen/row_txt_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/row_part_margin"
+        android:divider="?attr/verticalDivider"
+        android:orientation="vertical"
+        android:showDividers="middle|end|beginning" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/colume_height"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/row_left_padding"
+            android:paddingRight="@dimen/row_right_padding" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清除聊天记录"
+                    android:textColor="?attr/fontPrimary"
+                android:textSize="@dimen/row_txt_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="?attr/fontPrimary"
+                android:textSize="@dimen/row_txt_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/colume_height"
+            android:background="?attr/itemSelector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/row_left_padding"
+            android:paddingRight="@dimen/row_right_padding" >
+
+            <TextView
+                android:layout_width="@dimen/row_left_width"
+                android:layout_height="wrap_content"
+                android:text="屏蔽此人"
+                    android:textColor="?attr/fontPrimary"
+                android:textSize="@dimen/row_txt_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="?attr/fontPrimary"
+                android:textSize="@dimen/row_txt_size" />
+
+            <com.accumulation.lib.ui.button.ToggleButton
+                android:id="@+id/shield_user"
+                android:layout_width="50dp"
+                android:layout_height="25dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

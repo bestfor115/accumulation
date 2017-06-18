@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?dominantHue"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_toolbar_txt_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:visibility="visible" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/health" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_bg"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/login_passport"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/base_action_bar_height"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/login_icon_account"
+            android:drawablePadding="25dip"
+            android:hint="@string/login_username_hint"
+            android:paddingLeft="15dip"
+            android:shadowDx="0.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:textColor="?attr/fontPrimary"
+            android:textColorHint="?attr/fontDescription"
+            android:textSize="?attr/mediumFontSize" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@drawable/base_horization_line" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/base_action_bar_height"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/login_icon_password"
+            android:drawablePadding="25dip"
+            android:hint="@string/login_password_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:paddingLeft="15dip"
+            android:textColor="?attr/fontPrimary"
+            android:textColorHint="?attr/fontDescription"
+            android:textSize="?attr/mediumFontSize" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_by_account"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/solid_button_selector"
+        android:text="@string/login"
+        android:textColor="?attr/dominantHue"
+        android:textSize="?attr/largeFontSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:divider="@drawable/liner_divider"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/login_by_qq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/itemSelector"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/img_new_share_qq" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="QQ登录"
+                android:textColor="?attr/fontPrimary"
+                android:textSize="?attr/mediumFontSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_by_sina"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/itemSelector"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/img_new_share_sina" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="微博登录"
+                android:textColor="?attr/fontPrimary"
+                android:textSize="?attr/mediumFontSize" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

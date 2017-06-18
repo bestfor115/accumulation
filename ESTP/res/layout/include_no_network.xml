@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="#fbeeb8"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/chat_fail_resend_normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="世界上最遥远的距离就是没网，检查设置"
+        android:textColor="?attr/fontPrimary"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:drawableRight="@drawable/right_arrow"
+        android:textSize="14sp" />
+
+</LinearLayout>

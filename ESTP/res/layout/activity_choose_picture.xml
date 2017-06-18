@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?dominantHue" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/include_toolbar_commit" />
+
+        <GridView
+            android:id="@+id/pictures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:horizontalSpacing="5dp"
+            android:listSelector="?attr/itemSelector"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choose_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/base_action_bar_height"
+        android:background="@color/transparent_black"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="45dp" >
+
+            <ListView
+                android:id="@+id/directory_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:listSelector="@drawable/white_common_selector" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_action_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="#cc2e3335"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/directory"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/mu"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="所有图片"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/preview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center"
+            android:text="预览"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

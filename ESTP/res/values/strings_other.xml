@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_version"> apingtai 4.4 beta</string>
+
+    <!-- 消息提示 -->
+    <string name="msg_invalid_network">网络未链接</string>
+    <string name="msg_login_invalid_param">无效输入</string>
+    <string name="msg_login_result_fail"> 登陆失败</string>
+    <string name="msg_like_result_fail"> 操作失败</string>
+    <string name="msg_choose_pic_count"> 不能选更多的图片啦</string>
+    <string name="msg_result_fail"> 操作失败</string>
+
+    <!-- 控件显示 -->
+
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载&#8230;</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_no_data">没有更多啦</string>
+    <string name="xlistview_footer_hint_no_datas">暂无数据</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <!-- 登陆注册页 -->
+    <string name="mail_login_label">邮箱登录</string>
+    <string name="regist_account_label">注册账号</string>
+    <string name="login_username_hint">请输入邮箱</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="login_gov_info">Gov</string>
+    <string name="login_plation_info">内控协作平台</string>
+    <string name="company_info">"技术支持：北京艾图科技开发有限公司 "</string>
+    <string name="choose_other_login">其他登陆方式</string>
+    <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
+    <string name="send">发&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;送</string>
+    <string name="dialog_msg_logining">登陆中</string>
+
+    <!-- 主界面 -->
+    <string name="menu_home_text">动态</string>
+    <string name="menu_message_text">群组</string>
+    <string name="menu_discovery_text">知识</string>
+    <string name="menu_self_text">项目</string>
+    <string name="chat_hint">尽情说吧</string>
+    <!-- 用户设置界面 -->
+    <string name="pop_photo">拍照</string>
+    <string name="pop_choose">从手机相册选中</string>
+
+    <!-- 聊天界面 -->
+    <string name="longclick_speak">长按说话</string>
+    <string name="picture">照片</string>
+    <string name="camera">拍摄</string>
+    <string name="location">位置</string>
+    <string name="voice_up_tips">手指上滑,取消发送</string>
+    <string name="voice_cancel_tips">松开手指，取消发送</string>
+    <string name="voice_seconds_tips">还可以说%1$s秒</string>
+    <string name="voice_short_tips">录音时间太短</string>
+    <string name="network_tips">当前网络不可用,请检查您的网络!</string>
+    <string name="tips">温馨提示</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+
+    <string-array name="join_message">
+        <item>申请加入</item>
+        <item>等待审核</item>
+        <item>退出该群</item>
+    </string-array>
+    <string-array name="sex_choice">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="group_join_choice">
+        <item>允许所有加入</item>
+        <item>需要经过申请</item>
+    </string-array>
+    <string-array name="company_scale_choice">
+        <item>少于100</item>
+        <item>100到499</item>
+        <item>大于500</item>
+    </string-array>
+    <string-array name="search_type_choice">
+        <item>搜动态</item>
+        <item>搜用户</item>
+        <item>搜单位</item>
+        <item>搜群组</item>
+        <item>搜项目</item>
+        <item>搜知识</item>
+    </string-array>
+    <string-array name="group_join_state">
+        <item>未读</item>
+        <item>已读</item>
+        <item>已忽略</item>
+        <item>已同意</item>
+        <item>已拒绝</item>
+        <item>已取消</item>
+        <item>已退出</item>
+    </string-array>
+    <string-array name="company_property_choice">
+        <item>政府机关/事业单位</item>
+        <item>民营企业</item>
+        <item>外企</item>
+    </string-array>
+    <string-array name="company_industry_choice">
+        <item>食品饮料</item>
+        <item>服装行业</item>
+        <item>建筑开发</item>
+        <item>化工行业</item>
+        <item>纺织行业</item>
+        <item>造车行业</item>
+        <item>电脑行业</item>
+        <item>包装行业</item>
+        <item>运输行业</item>
+        <item>家电行业</item>
+        <item>电子行业</item>
+        <item>旅游行业</item>
+        <item>机械行业</item>
+        <item>化妆品行业</item>
+        <item>烟草行业</item>
+        <item>酿酒行业</item>
+        <item>互联网行业</item>
+        <item>中介行业</item>
+        <item>金属行业</item>
+        <item>广告行业</item>
+        <item>农业服务</item>
+    </string-array>
+    <string-array name="knowledge_type_dsn">
+        <item>所有人可见</item>
+        <item>单位可见</item>
+        <item>群组可见</item>
+        <item>我自己可见</item>
+    </string-array>
+    <string-array name="knowledge_type">
+        <item>公共 </item>
+        <item>单位 </item>
+        <item>群组 </item>
+        <item>私有 </item>
+    </string-array>
+
+    <string name="soft_update_no">已经是最新版本</string>
+    <string name="soft_update_title">软件更新</string>
+    <string name="soft_update_info">检测到新版本，立即更新吗?</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">稍后更新</string>
+    <string name="soft_updating">正在更新</string>
+    <string name="soft_update_cancel">取消</string>
+    <string name="app_share_broadcast">分享到动态</string>
+    <string name="app_share_message">分享到私信</string>
+    <!-- 第三方登陆 -->
+    <string name="login_with_msg">用手机号码登录</string>
+    <string name="login_with_weixin">用微信登录</string>
+    <string name="login_with_sina_weibo">用新浪微博登录</string>
+    <string name="login_with_qzone">用QQ空间登录</string>
+    <string name="login_with_other_plat">其他帐号登录</string>
+    <string name="userid_found">用户信息已存在，正在跳转登录操作…</string>
+    <string name="logining">使用%s帐号登录中…</string>
+    <string name="auth_cancel">授权操作已取消</string>
+    <string name="auth_error">授权操作遇到错误，请阅读Logcat输出; \n 如微信登录，需要微信客户端</string>
+    <string name="auth_complete">授权成功，正在跳转登录操作…</string>
+    <string name="if_register_needed">如果您需要注册功能…</string>
+    <string name="after_auth">一般来说第三方登录时，第三方平台已经为您完成用户身份校验，您可以放心让用户登录。\n\n但如果您需要判断用户是否为新用户，可以在授权操作完成后，将用户的信息通过字段“HashMap userInfo”携带给login方法。客户端通过“String userId”执行登录请求，如果服务端判定此userId为未注册用户，可以将userInfo发送给注册接口，获取用户在此平台上的昵称、头像等数据，然后执行注册</string>
+    <string name="tpl_ok">确定</string>
+    <string name="tpl_cancel">取消</string>
+    <string name="tpl_key_user_icon">头像</string>
+    <string name="tpl_key_user_name">昵称</string>
+    <string name="tpl_key_user_gender">性别</string>
+    <string name="tpl_key_user_note">备注</string>
+    <string name="tpl_value_user_name">昵称</string>
+    <string name="tpl_value_user_gender">性别</string>
+    <string name="tpl_value_user_note">请填写备注信息</string>
+    <string name="tpl_sign_user_info">用户信息</string>
+    <string name="tpl_sign_up">注册</string>
+    <string name="tpl_girl">女</string>
+    <string name="tpl_boy">男</string>
+    <string name="tpl_camera">拍照</string>
+    <string name="tpl_picture">从相册获取</string>
+    <string name="tpl_change_user_name_title">更改名字</string>
+    <string name="tpl_change_user_note_title">更改备注</string>
+    <string name="tpl_input_user_name_hint">好名字可以让你的朋友更容易记住你</string>
+    <string name="tpl_input_user_note_hint">自定义备注信息，给你带来更多吸引</string>
+    <string name="tpl_no_sdcard">sdcard 卡不存在</string>
+    <string name="tpl_msg_login_hint">请输入手机号码</string>
+    <string name="tpl_verify_code_hint">请输验证码</string>
+    <string name="tpl_get_verify_code">获取验证码</string>
+    <string name="tpl_send_verify_code">检验验证码</string>
+    <string name="signup_success">注册成功</string>
+    <string name="signup_failed">注册失败</string>
+    <string name="scan_tips">将二维码图片对准扫描框即可自动扫描</string>
+    <string name="about_us">关于我们</string>
+    <string name="done">完&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;成</string>
+    <string name="save">保&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;存</string>
+    <string name="company_license">京ICP备13041617号</string>
+
+</resources>

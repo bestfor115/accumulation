@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_toolbar_txt_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/colume_item_space"
+                android:orientation="vertical" >
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="账号绑定" />
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="夜间模式" />
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="清除缓存" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/colume_item_space"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/suggest"
+                    style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="意见反馈" />
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+
+                <LinearLayout
+                    android:id="@+id/about"
+                    style="@style/ColumeItem" >
+
+                    <TextView
+                        style="@style/ColumeItemTxt"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:text="关于我们" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/logout"
+                style="@style/ColumeItem"
+                android:layout_marginTop="@dimen/colume_item_space" >
+
+                <TextView
+                    style="@style/ColumeItemTxt"
+                    android:gravity="center"
+                    android:text="退出登录"
+                    android:textColor="#e14123" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

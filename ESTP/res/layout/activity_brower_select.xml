@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#191919" >
+
+    <com.accumulation.app.view.CustomViewPager
+        android:id="@+id/pagerview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/ActionBar"
+        android:background="#60000000" >
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="@dimen/topbar_btn_width"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_selector"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_show_pic_back_icon" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/ActionBarTitle"
+            android:ellipsize="end"
+            android:maxWidth="200dp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/menu"
+            style="@style/ActionBarFont"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#333" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/operate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_action_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="#cc2e3335"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="@dimen/menu_icon_size"
+                android:layout_height="@dimen/menu_icon_size"
+                android:duplicateParentState="true"
+                android:src="@drawable/sticker_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:text="贴图"
+                android:textColor="@color/menu_color_selector"
+                android:textSize="@dimen/menu_text_size"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="@dimen/menu_icon_size"
+                android:layout_height="@dimen/menu_icon_size"
+                android:duplicateParentState="true"
+                android:src="@drawable/fliters_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:text="滤镜"
+                android:textColor="@color/menu_color_selector"
+                android:textSize="@dimen/menu_text_size"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="@dimen/menu_icon_size"
+                android:layout_height="@dimen/menu_icon_size"
+                android:duplicateParentState="true"
+                android:src="@drawable/crop_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:text="裁剪"
+                android:textColor="@color/menu_color_selector"
+                android:textSize="@dimen/menu_text_size"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="@dimen/menu_icon_size"
+                android:layout_height="@dimen/menu_icon_size"
+                android:duplicateParentState="true"
+                android:src="@drawable/texture_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:text="旋转"
+                android:textColor="@color/menu_color_selector"
+                android:textSize="@dimen/menu_text_size"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

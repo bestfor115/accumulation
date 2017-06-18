@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?dominantHue" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/include_toolbar_txt_menu" />
+
+        <LinearLayout
+            android:id="@+id/scroll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <com.accumulation.lib.ui.scrollable.ObservableScrollView
+                android:id="@+id/input_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/article_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/transparent"
+                        android:gravity="top"
+                        android:hint="  标题"
+                        android:inputType="textMultiLine|textNoSuggestions"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textColor="?attr/fontPrimary"
+                        android:textColorHint="?attr/fontDescription"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
+                        android:background="?verticalDivider" >
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/article_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/add_article_image"
+                        android:minHeight="100dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/cover_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:drawableLeft="@drawable/compose_pic_big_add"
+                            android:drawablePadding="10dp"
+                            android:text="添加封面"
+                            android:textColor="?attr/fontDescription"
+                            android:textSize="?attr/largeFontSize" />
+
+                        <ImageView
+                            android:id="@+id/cover_delete"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:visibility="gone"
+                            android:layout_alignParentRight="true"
+                            android:padding="5dp"
+                            android:src="@drawable/compose_photo_close" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/content_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" >
+
+                        <com.accumulation.app.view.EmoticonsEditText
+                            android:id="@+id/article_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:gravity="top"
+                            android:hint="  正文"
+                            android:inputType="textMultiLine|textNoSuggestions"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="10dp"
+                            android:textColor="?attr/fontPrimary"
+                            android:textColorHint="?attr/fontDescription"
+                            android:textSize="?attr/mediumFontSize" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.accumulation.lib.ui.scrollable.ObservableScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emotion_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <include
+            android:id="@+id/footer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/include_add_article_botton"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</RelativeLayout>

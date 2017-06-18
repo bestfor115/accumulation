@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:itv="http://schemas.huawei.com/smarttv/2013"
+xmlns:openSearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
+    <id>
+        11
+    </id>
+    <updated>
+        2013-12-16T15:47:12.094Z
+    </updated>
+    <link href="http://183.59.134.8:8082/EPG/smarttv/screen/11/entry" rel="self"
+    type="application/atom+xml" />
+    <category term="screen" scheme="http://schemas.huawei.com/smarttv/2013#kind"
+    />
+    <title type="text">
+        应用
+    </title>
+    <logo>
+    </logo>
+    <openSearch:startIndex>
+        1
+    </openSearch:startIndex>
+    <openSearch:itemsPerPage>
+        6
+    </openSearch:itemsPerPage>
+    <openSearch:totalResults>
+        6
+    </openSearch:totalResults>
+    <entry>
+        <id>1</id>
+        <category term="vasurl" scheme="http://schemas.huawei.com/smarttv/2013#kind"/>
+        <title type="text">游戏</title>
+        <content type="text"></content>
+        <itv:attribute name="pictureURL">
+			http://192.168.2.40/cs/11.png
+        </itv:attribute>
+        <itv:attribute name="logoURL"></itv:attribute>
+        <itv:attribute name="jumpurl">
+            http://183.59.134.8:8082/EPG/jsp/tvScreenSwitch.jsp?action=JUMPTOVAS&amp;vasURL=http://itv.chinagames.net/portal_2.0/list.jsp</itv:attribute>
+    </entry>
+    <entry>
+        <id>2</id>
+        <category term="stbapk" scheme="http://schemas.huawei.com/smarttv/2013#kind"/>
+        <title type="text">应用商城</title>
+        <content type="text"></content>
+        <itv:attribute name="pictureURL">
+            http://183.59.134.8:8082/EPG/jsp/images/universal/film/desktop/poster/IMG20130910014713188.png
+        </itv:attribute>
+        <itv:attribute name="logoURL"></itv:attribute>
+        <itv:attribute name="jumpurl">
+            local://stbapk/com.huawei.dsm
+		</itv:attribute>
+        <itv:attribute name="firstfocus">true</itv:attribute>
+        <itv:attribute name="downloadurl"></itv:attribute>
+    </entry>
+    <entry>
+        <id>
+            3
+        </id>
+        <category term="stbapk" scheme="http://schemas.huawei.com/smarttv/2013#kind"
+        />
+        <title type="text">
+            天翼云
+        </title>
+        <content type="text">
+        </content>
+        <itv:attribute name="pictureURL">
+            http://183.59.134.8:8082/EPG/jsp/images/universal/film/desktop/poster/IMG201309062347356.png
+        </itv:attribute>
+        <itv:attribute name="logoURL">
+        </itv:attribute>
+        <itv:attribute name="jumpurl">
+            local://stbapk/com.cn21.ecloud.tv
+        </itv:attribute>
+        <itv:attribute name="downloadurl">
+        </itv:attribute>
+    </entry>
+    <entry>
+        <id>
+            4
+        </id>
+        <category term="stbapk" scheme="http://schemas.huawei.com/smarttv/2013#kind"
+        />
+        <title type="text">
+            茄子相册
+        </title>
+        <content type="text">
+        </content>
+        <itv:attribute name="pictureURL">
+            http://183.59.134.8:8082/EPG/jsp/images/universal/film/desktop/poster/IMG2013090623471234.png
+        </itv:attribute>
+        <itv:attribute name="logoURL">
+        </itv:attribute>
+        <itv:attribute name="jumpurl">
+            local://stbapk/com.yuninfo.eggplantalbum_tvbox
+        </itv:attribute>
+        <itv:attribute name="downloadurl">
+        </itv:attribute>
+    </entry>
+    <entry>
+        <id>
+            5
+        </id>
+        <category term="stbapk" scheme="http://schemas.huawei.com/smarttv/2013#kind"
+        />
+        <title type="text">
+            媒体中心
+        </title>
+        <content type="text">
+        </content>
+        <itv:attribute name="pictureURL">
+            http://183.59.134.8:8082/EPG/jsp/images/universal/film/desktop/poster/IMG20130906232042205.png
+        </itv:attribute>
+        <itv:attribute name="logoURL">
+        </itv:attribute>
+        <itv:attribute name="jumpurl">
+            local://stbapk/com.huawei.iptv.stb.dlna
+        </itv:attribute>
+        <itv:attribute name="downloadurl">
+        </itv:attribute>
+    </entry>
+    <entry>
+        <id>
+            6
+        </id>
+        <category term="stbapk" scheme="http://schemas.huawei.com/smarttv/2013#kind"
+        />
+        <title type="text">
+            消息中心
+        </title>
+        <content type="text">
+        </content>
+        <itv:attribute name="pictureURL">
+            http://183.59.134.8:8082/EPG/jsp/images/universal/film/desktop/poster/IMG20130910015209141.png
+        </itv:attribute>
+        <itv:attribute name="logoURL">
+        </itv:attribute>
+        <itv:attribute name="jumpurl">
+            local://stbapk/com.huawei.iptv.stb.notificationcenter
+        </itv:attribute>
+        <itv:attribute name="downloadurl">
+        </itv:attribute>
+    </entry>
+</feed>

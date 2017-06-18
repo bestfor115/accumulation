@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_action_bar_height"
+        android:background="@color/toolbar_bg_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_background" >
+
+            <ImageView
+                android:id="@+id/search_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/search_arrow_down" />
+
+            <com.accumulation.lib.ui.edittext.ClearEditText
+                android:id="@+id/search_input"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:drawablePadding="10dp"
+                android:hint="搜索..."
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:text="取消"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/search_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="left"
+                android:text="近期热词"
+                android:textColor="?attr/fontDescription"
+                android:textSize="?attr/mediumFontSize" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="?verticalDivider" >
+            </RelativeLayout>
+
+            <com.accumulation.app.view.SearchTipsGroupView
+                android:id="@+id/search_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </com.accumulation.app.view.SearchTipsGroupView>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

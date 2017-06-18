@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#f5eeeeee"
+        android:orientation="vertical"
+        android:paddingTop="0dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/dsn"
+                style="@style/ActionBarFont"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="15dp"
+                android:text="分享到"
+                android:textColor="@color/description_txt_color" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/ring_common_title_bg" >
+        </View>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:divider="@drawable/login_type_divider"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:showDividers="middle" >
+
+                <ImageView
+                    android:id="@+id/share_wx"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/more_circlefriends" />
+
+                <ImageView
+                    android:id="@+id/share_wx_chat"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/more_weixin" />
+
+                <ImageView
+                    android:id="@+id/share_wb_sina"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/more_weibo" />
+
+                <ImageView
+                    android:id="@+id/share_wb_tencent"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/more_icon_qzone"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/share_qq"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/more_icon_qq"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_view_rounded_single"
+            android:text="取  消"
+            android:textColor="@color/black_color_selector"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

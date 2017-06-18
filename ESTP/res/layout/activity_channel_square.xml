@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:drag="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/dominantHue"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_toolbar_txt_menu" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/channel_article_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/tabbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/viewpager_tab_height"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="?attr/auxiliaryHueThree"
+                    android:gravity="center" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal" >
+
+                        <com.accumulation.app.view.SlidingTabLayout
+                            android:id="@id/tabs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:background="?attr/auxiliaryHueThree" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/colume_down"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/list_indecator_button_down" >
+                    </ImageView>
+                </LinearLayout>
+
+                <include layout="@layout/include_vertical_divider" />
+            </LinearLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/channel_manage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/viewpager_tab_height"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/auxiliaryHueThree"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/manage_dsn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="切换栏目"
+                            android:textColor="?attr/fontDescription"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/colume_up"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:padding="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/list_indecator_button_up" >
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/commit_manage"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="完成"
+                            android:textColor="#ff0000"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_vertical_divider" />
+                </LinearLayout>
+
+                <com.accumulation.lib.ui.grid.drag.DragGridView
+                    android:id="@+id/order_channel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/auxiliaryHueThree"
+                    android:gravity="center"
+                    android:horizontalSpacing="8dp"
+                    android:listSelector="?attr/itemSelector"
+                    android:numColumns="4"
+                    android:padding="2dp"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="8dp"
+                    drag:itemMargin="8dp"
+                    drag:numColumns="4" />
+
+                <LinearLayout
+                    android:id="@+id/choose_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="20dp"
+                        android:background="?attr/auxiliaryHueThree"
+                        android:gravity="right|center_vertical"
+                        android:text="长按删除或排序"
+                        android:textColor="?attr/fontDescription"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/viewpager_tab_height"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="点击添加更多频道"
+                                    android:textColor="?attr/fontDescription"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <include layout="@layout/include_vertical_divider" />
+                        </LinearLayout>
+
+                        <com.accumulation.app.view.GridViewForScrollView
+                            android:id="@+id/unorder_channel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:horizontalSpacing="8dp"
+                            android:listSelector="?attr/itemSelector"
+                            android:numColumns="4"
+                            android:stretchMode="columnWidth"
+                            android:verticalSpacing="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

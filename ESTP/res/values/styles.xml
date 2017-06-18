@@ -1,0 +1,183 @@
+<resources>
+
+    <style name="LightAppBaseTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="vpiIconPageIndicatorStyle">@style/MyWidget.TabPageIndicator</item>
+            <item name="colorPrimary">@color/indigo_500</item>
+    <item name="colorPrimaryDark">@color/indigo_700</item>
+    <item name="colorAccent">@color/cyan_500</item>
+    <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="DarkAppBaseTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="vpiIconPageIndicatorStyle">@style/MyWidget.TabPageIndicator</item>
+    </style>
+
+    <style name="MyWidget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">12dip</item>
+        <item name="android:paddingRight">12dip</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:background">@drawable/btn_selector</item>
+    </style>
+
+    <style name="ActionBar">
+        <item name="android:background">@color/toolbar_bg_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_action_bar_height</item>
+    </style>
+
+    <style name="ActionBarButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/while_color_selector</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">5sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/search_btn_selector</item>
+    </style>
+
+    <style name="MyTabView" parent="TabView">
+        <item name="iconWidth">28dp</item>
+        <item name="iconHeight">28dp</item>
+        <item name="android:textSize">0sp</item>
+    </style>
+
+    <style name="ActionBarTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="ActionBarFont">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/menu_txt_color</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/AppTheme.SpinnerDropDownItemStyle</item>
+    </style>
+
+    <style name="Toolbar" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
+    </style>
+
+    <style name="AppTheme.SpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="AppTheme.SpinnerDropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textColor">#212121</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <!-- 设置未浮动窗口 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置无边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置无标题 -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!-- 设置完全透明 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 设置屏幕变暗 -->
+    </style>
+
+    <style name="DialogWindowTitle">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.DialogWindowTitle</item>
+    </style>
+    <!-- dialog -->
+    <style name="TextAppearance">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorHighlight">#FFFFFF</item>
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textColorLink">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.DialogWindowTitle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Animations" />
+
+    <style name="Animations.GrowFromBottom">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+    </style>
+
+    <style name="Animations.Pop">
+        <item name="@android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="@android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="Animations.Right_Menu_Pop">
+        <item name="@android:windowEnterAnimation">@anim/group_from_right</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_left</item>
+    </style>
+
+    <style name="Animations.GrowFromTop">
+        <item name="@android:windowEnterAnimation">@anim/slide_in_from_top</item>
+        <item name="@android:windowExitAnimation">@anim/slide_out_to_top</item>
+    </style>
+
+    <style name="ColumeItem">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/itemSelector</item>
+        <item name="android:layout_height">@dimen/colume_height</item>
+        <item name="android:paddingLeft">@dimen/colume_item_padding_left</item>
+        <item name="android:paddingRight">@dimen/colume_item_padding_right</item>
+    </style>
+
+    <style name="ColumeItemTxt">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/fontPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:drawablePadding">10sp</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/toolbar_bg_color</item>
+    </style>
+
+</resources>

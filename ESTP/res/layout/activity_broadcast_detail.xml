@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?dominantHue" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/include_toolbar_icon_menu" />
+
+        <com.accumulation.app.view.RefreshLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null" >
+            </ListView>
+        </com.accumulation.app.view.RefreshLayout>
+
+        <include
+            android:id="@+id/line"
+            layout="@layout/include_vertical_divider" />
+
+        <LinearLayout
+            android:id="@+id/operate_broadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:showDividers="middle"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/retweet_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/menu_icon_small_size"
+                    android:layout_height="@dimen/menu_icon_small_size"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/icon_retweet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:text="转播"
+                    android:textColor="@color/icon_txt_color"
+                    android:textSize="@dimen/menu_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/like_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/menu_icon_small_size"
+                    android:layout_height="@dimen/menu_icon_small_size"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/icon_like" />
+
+                <TextView
+                    android:id="@+id/like_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:text="点赞"
+                    android:textColor="@color/icon_txt_color"
+                    android:textSize="@dimen/menu_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/comment_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/menu_icon_small_size"
+                    android:layout_height="@dimen/menu_icon_small_size"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/icon_comment" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:text="评论"
+                    android:textColor="@color/icon_txt_color"
+                    android:textSize="@dimen/menu_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/favorite_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/menu_icon_small_size"
+                    android:layout_height="@dimen/menu_icon_small_size"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/icon_favorite" />
+
+                <TextView
+                    android:id="@+id/favorite_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:text="收藏"
+                    android:textColor="@color/icon_txt_color"
+                    android:textSize="@dimen/menu_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/copy_broadcast"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/menu_icon_small_size"
+                    android:layout_height="@dimen/menu_icon_small_size"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/icon_copy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:text="复制"
+                    android:textColor="@color/icon_txt_color"
+                    android:textSize="@dimen/menu_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/com/accumulation/app/AccumulationAPP.java=UTF-8
+encoding//src/com/accumulation/app/config/Config.java=UTF-8
+encoding//src/com/accumulation/app/manager/SpannedManager.java=UTF-8
+encoding//src/com/accumulation/app/ui/TopicHomeActivity.java=UTF-8
+encoding//src/com/accumulation/app/ui/chat/UserChatActivity.java=UTF-8
+encoding//src/com/accumulation/app/ui/file/ChoosePictureActivity.java=UTF-8
+encoding//src/com/accumulation/app/ui/user/MyQrcodeActivity.java=UTF-8
+encoding//src/com/accumulation/app/ui/user/UserCardActivity.java=UTF-8
+encoding//src/com/accumulation/app/ui/user/UserHomeActivity.java=UTF-8
+encoding//src/com/accumulation/app/view/OnItemClick.java=UTF-8
+encoding//src/com/accumulation/app/view/xlist/XListViewHeader.java=UTF-8
+encoding//src_zhar/com/zbar/lib/CaptureActivity.java=UTF-8
+encoding//src_zhar/com/zbar/lib/decode/CaptureActivityHandler.java=UTF-8
+encoding//src_zhar/com/zbar/lib/decode/DecodeHandler.java=UTF-8
+encoding/<project>=GBK

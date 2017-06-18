@@ -1,0 +1,259 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/auxiliaryHueThree"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <com.accumulation.lib.ui.image.CircleImageView
+                android:id="@+id/user_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp" >
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:textColor="#006A92"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/user_dsn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user_name"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#555555"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="请选择打赏多少"
+            android:textColor="?attr/fontDescription"
+            android:textSize="?attr/mediumFontSize" />
+
+        <LinearLayout
+            android:id="@+id/reward_1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/dominantHue"
+            android:gravity="center_vertical"
+            android:tag="1" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/mini_check_red"
+                android:tag="check"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_reward_coin" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" x1 小小心意" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reward_10"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/dominantHue"
+            android:gravity="center_vertical"
+            android:tag="10" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/mini_check_red"
+                android:tag="check"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_reward_coin" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" x10 再接再厉" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reward_50"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/dominantHue"
+            android:gravity="center_vertical"
+            android:tag="50" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/mini_check_red"
+                android:tag="check"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_reward_coin" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" x50 棒棒哒" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reward_100"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/dominantHue"
+            android:gravity="center_vertical"
+            android:tag="100" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/mini_check_red"
+                android:tag="check"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_reward_coin" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" x100 我是土豪" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="然后对作者说点什么"
+            android:textColor="?attr/fontDescription"
+            android:textSize="?attr/mediumFontSize" />
+
+        <EditText
+            android:id="@+id/reward_input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/home_line_bg"
+            android:gravity="left|top"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:minLines="5"
+            android:paddingLeft="15.0dip"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:textColor="#ff545454"
+            android:textSize="?attr/mediumFontSize" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/solid_button_selector"
+            android:text="提交打赏"
+            android:textColor="?attr/dominantHue"
+            android:textSize="?attr/largeFontSize" />
+
+        <LinearLayout
+            android:id="@+id/reward_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="?attr/auxiliaryHueThree"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="打赏记录"
+                    android:textColor="?attr/auxiliaryHue"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/comment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text=" 0条"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/no_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_no_comment" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -75,7 +75,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ImageManipulationsActivity"/>
         <!-- 推送服务 -->
         <service
             android:name="com.zyl.push.sdk.PushService"

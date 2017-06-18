@@ -1,0 +1,233 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/auxiliaryHueThree"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:id="@+id/tag_part"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/tag_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <com.accumulation.lib.ui.image.CircleImageView
+                    android:id="@+id/broadcastItemImageAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <RelativeLayout
+                    android:id="@+id/broadcastAvatarRight"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:id="@+id/broadcastItemTextUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:textColor="#006A92"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/broadcastItemTextPublishTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/broadcastItemTextUserName"
+                        android:textColor="#555555"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal" >
+
+                <com.accumulation.app.view.RichTextView
+                    android:id="@+id/broadcastItemTextContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:autoLink="web"
+                    android:lineSpacingMultiplier="1.25"
+                    android:text=""
+                    android:textColor="?attr/fontPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/broadcastItemLayoutImagesContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp" />
+
+            <LinearLayout
+                android:id="@+id/zip_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp" />
+
+            <LinearLayout
+                android:id="@+id/broadcastItemLayoutRelatedContentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@color/related_broadcast_mask"
+                android:backgroundTintMode="screen"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <com.accumulation.app.view.RichTextView
+                    android:id="@+id/broadcastItemTextRelatedContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:autoLink="web"
+                    android:lineSpacingMultiplier="1.25"
+                    android:textColor="@color/secondary_txt_color"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/related_image_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="?attr/auxiliaryHueThree"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="评论"
+                    android:textColor="?attr/auxiliaryHue"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/comment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text=" 0条"
+                    android:textColor="?attr/fontDescription"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/no_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_no_comment" />
+
+                <Button
+                    android:id="@+id/add_comment"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/hollow_operation_bg"
+                    android:text="快来抢沙发"
+                    android:textColor="@color/description_txt_color"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reward"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_selector"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_gift" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-3dp"
+            android:text="打赏"
+            android:textColor="?attr/fontPrimary"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</RelativeLayout>
