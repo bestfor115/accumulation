@@ -93,5 +93,8 @@ public class MScriptProtocol /*implements Scriptable*/{
 	private static void api_setInputMethodState(int state){
 		mScriptImpl.api_setInputMethodState(state);
 	}
+	private static void api_tapByImage(String path) {
+		mScriptImpl.api_tapByImage(path);
+	}
 
 }

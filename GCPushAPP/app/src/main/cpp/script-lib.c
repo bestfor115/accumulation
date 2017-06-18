@@ -41,6 +41,7 @@ static struct {
     jmethodID api_tapByText;
     jmethodID api_tapById;
     jmethodID api_setInputMethodState;
+    jmethodID api_tapByImage;
 } m_player;
 
 static JNIEnv* attach_java_thread(const char* threadName) {
@@ -205,6 +206,11 @@ static int registerNativeMethods(JNIEnv *env, const char* className,
         LOGE("no such static method : api_setInputMethodState");
         return JNI_FALSE;
     }
+    if (!(m_player.api_tapByImage = (*env)->GetStaticMethodID(env, m_player.clazz,
+                                                         "api_tapByImage", "(Ljava/lang/String;)V"))) {
+        LOGE("no such static method : api_tapByImage");
+        return JNI_FALSE;
+    }
     if ((*env)->RegisterNatives(env, clazz, gMethods, numMethods) < 0) {
         return JNI_FALSE;
     }
@@ -257,6 +263,16 @@ int api_toast(lua_State* L) {
     if (env) {
         jstring js = (*env)->NewStringUTF(env, param);
         (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_toast,
+                                     js);
+    }
+    return 0;
+}
+int api_tapByImage(lua_State* L) {
+    const char * param = luaL_checkstring(L, 1);
+    JNIEnv *env = attach_java_thread("mplayer-callback");
+    if (env) {
+        jstring js = (*env)->NewStringUTF(env, param);
+        (*env)->CallStaticVoidMethod(env, m_player.clazz, m_player.api_tapByImage,
                                      js);
     }
     return 0;
@@ -517,6 +533,7 @@ void regFunc() {
     lua_register(L, "api_tapById", api_tapById);
     lua_register(L, "api_showInputMethod", api_showInputMethod);
     lua_register(L, "api_hideInputMethod", api_hideInputMethod);
+    lua_register(L, "api_tapByImage", api_tapByImage);
 
 }
 

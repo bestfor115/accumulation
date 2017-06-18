@@ -1,5 +1,5 @@
 function ___MAIN___()
-    enterTarget()
+api_tapByImage("/data/user/0/com.zyl.push.app/files/bg.png")
 end
 
 function enterTarget()

@@ -6,6 +6,7 @@ public interface Scriptable {
     void api_openApp(String app);
     void api_tapById(String id);
     void api_tapByText(String text);
+    void api_tapByImage(String path);
     void api_sleep(long delay);
     int api_sendMessage(String number, String content);
     int api_callPerson(String number);

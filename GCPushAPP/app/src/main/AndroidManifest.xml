@@ -54,7 +54,9 @@
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -118,6 +120,8 @@
                 <action android:name="com.zyl.push.action.TEST" />
             </intent-filter>
         </receiver>
+        <activity android:name="com.androidyuan.lib.screenshot.ScreenShotActivity"
+            android:theme="@android:style/Theme.Dialog" />
     </application>
 
 </manifest>

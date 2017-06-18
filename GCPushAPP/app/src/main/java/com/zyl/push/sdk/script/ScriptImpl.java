@@ -62,6 +62,14 @@ public class ScriptImpl implements Scriptable {
 		ScriptManager.getManager().getContext().sendBroadcast(intent);
 	}
 
+	@Override
+	public void api_tapByImage(String path) {
+		int loc[]=CoordinateManager.getManager().matchImage(path);
+		if(loc[0]>0&&loc[1]>0){
+			api_sendTapGesture(loc[0],loc[1]);
+		}
+	}
+
 	private Intent parseAPPURL(String url) {
 		Intent intent=null;
 		if (Constant.APP_KEY_WEIXIN.equals(url)) {
